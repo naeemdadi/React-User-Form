@@ -12,7 +12,7 @@ class UpdateUser extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('https://naeem-react-form.herokuapp.com/'+ this.props.match.params.id)
+        axios.get('/'+ this.props.match.params.id)
             .then(res => {
                 this.setState({
                     firstname: res.data.firstname,
@@ -65,7 +65,7 @@ class UpdateUser extends Component {
             description: this.state.description
         }
 
-        axios.patch(`https://naeem-react-form.herokuapp.com/update/${this.props.match.params.id}`, user)
+        axios.patch(`/update/${this.props.match.params.id}`, user)
 
         window.location = '/view';
     }

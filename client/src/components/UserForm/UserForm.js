@@ -53,7 +53,7 @@ class UserForm extends Component {
             description: this.state.description
         }
 
-        axios.post('https://naeem-react-form.herokuapp.com/create', user)
+        axios.post('/create', user)
 
         this.setState({
             firstname: '',
