@@ -67,7 +67,7 @@ class UpdateUser extends Component {
 
         axios.patch(`/update/${this.props.match.params.id}`, user)
 
-        window.location = 'https://naeem-react-form.herokuapp.com/view';
+        window.location = "https://react-user-form.netlify.app/view";
     }
 
     render() {
