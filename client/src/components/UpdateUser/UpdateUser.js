@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
 import axios from 'axios';
 
@@ -67,7 +68,7 @@ class UpdateUser extends Component {
 
         axios.patch(`/update/${this.props.match.params.id}`, user)
 
-        window.location = "https://react-user-form.netlify.app/view";
+        // window.location = "https://react-user-form.netlify.app/view";
     }
 
     render() {
@@ -118,8 +119,9 @@ class UpdateUser extends Component {
                         onChange={this.onChangeDescription} />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group form-create-btn">
                     <input type="submit" value="Edit User" className="btn--primary btn--green btn--animated" />
+                    <Link to='/view' className="btn--primary btn--white btn-animated">View</Link>
                 </div>
             </form>
         </div>
