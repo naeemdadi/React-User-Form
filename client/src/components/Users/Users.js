@@ -29,7 +29,7 @@ class Users extends Component {
     }
 
     deleteUser = (id) => {
-        axios.delete(`/delete/${id}`)
+        axios.delete(`https://naeem-react-form.herokuapp.com/delete/${id}`)
 
         this.setState({
             users: this.state.users.filter(el => el._id !== id)
