@@ -60,6 +60,7 @@ class Users extends Component {
                         { this.userList() }
                     </tbody>
                 </table>
+                <Link style={{marginTop:'16rem', justifyContent:'center'}} className="btn btn--green btn-animated" to="/create">Create</Link>
             </div>
         )
     }

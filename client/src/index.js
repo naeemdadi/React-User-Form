@@ -6,6 +6,8 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://cors-anywhere-naeem.herokuapp.com/https://naeem-react-form.herokuapp.com'
 
+// axios.defaults.baseURL = 'http://localhost:5000';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
