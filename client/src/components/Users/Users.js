@@ -24,6 +24,13 @@ class Users extends Component {
     componentDidMount = () => {
         axios.get('/')
             .then(res => {
+                let date = res.data;
+                
+                date.map((user) => {
+                    let d = new Date(user.dob);
+                    let dob = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+                    return user.dob = dob
+                })
                 this.setState({ users: res.data })
             })
     }
@@ -38,6 +45,9 @@ class Users extends Component {
 
     userList = () => {
         return this.state.users.map(userData => {
+            // let d = new Date(userData.dob);
+            // let dob = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+            // console.log(dob)
             return <User user={userData} deleteUser={this.deleteUser} key={userData._id} />
         })
     }
@@ -60,7 +70,7 @@ class Users extends Component {
                         { this.userList() }
                     </tbody>
                 </table>
-                <Link style={{marginTop:'16rem', justifyContent:'center'}} className="btn btn--green btn-animated" to="/create">Create</Link>
+                <Link style={{marginTop:'20rem', justifyContent:'center'}} className="btn btn--green btn-animated" to="/create">Create</Link>
             </div>
         )
     }
