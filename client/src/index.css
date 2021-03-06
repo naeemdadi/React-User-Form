@@ -110,6 +110,7 @@ code {
   cursor: pointer;
   margin-top: 2rem;
   margin-bottom: 3rem;
+  outline: none;
 }
 
 .btn--primary:hover {
