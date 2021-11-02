@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Home from './components/Home/Home';
-import UserForm from './components/UserForm/UserForm';
-import TotalUsers from './components/Users/Users';
-import UpdateUser from './components/UpdateUser/UpdateUser';
+import Home from "./components/Home/Home";
+import UserForm from "./components/UserForm/UserForm";
+import TotalUsers from "./components/Users/Users";
+import UpdateUser from "./components/UpdateUser/UpdateUser";
 
 const App = () => {
   return (
@@ -17,6 +17,6 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
