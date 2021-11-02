@@ -10,10 +10,7 @@ const app = express();
 const port = process.env.PORT;
 
 // Set up a whitelist and check against it:
-var allowlist = [
-  "http://localhost:3000",
-  "https://react-user-form.netlify.app/",
-];
+var allowlist = ["https://react-user-form.netlify.app/"];
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
   if (allowlist.indexOf(req.header("Origin")) !== -1) {
