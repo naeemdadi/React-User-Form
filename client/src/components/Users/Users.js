@@ -18,67 +18,6 @@ const User = (props) => {
   );
 };
 
-// class Users extends Component {
-
-//     state = {
-//         users: []
-//     }
-
-//     componentDidMount = () => {
-//         axios.get('/')
-//             .then(res => {
-//                 let date = res.data;
-
-//                 date.map((user) => {
-//                     let d = new Date(user.dob);
-//                     let dob = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
-//                     return user.dob = dob
-//                 })
-//                 this.setState({ users: res.data })
-//             })
-//     }
-
-//     deleteUser = (id) => {
-//         axios.delete(`/delete/${id}`)
-
-//         this.setState({
-//             users: this.state.users.filter(el => el._id !== id)
-//         })
-//     }
-
-//     userList = () => {
-//         return this.state.users.map(userData => {
-//             // let d = new Date(userData.dob);
-//             // let dob = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-//             // console.log(dob)
-//             return <User user={userData} deleteUser={this.deleteUser} key={userData._id} />
-//         })
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <h1>Users Data</h1>
-//                 <table>
-//                     <thead>
-//                         <tr>
-//                             <th>Firstname</th>
-//                             <th>Lastname</th>
-//                             <th>Email Id</th>
-//                             <th>Date Of Birth</th>
-//                             <th>Description</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         { this.userList() }
-//                     </tbody>
-//                 </table>
-//                 <Link style={{marginTop:'20rem', justifyContent:'center'}} className="btn btn--green btn-animated" to="/create">Create</Link>
-//             </div>
-//         )
-//     }
-// }
-
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -124,7 +63,7 @@ const Users = () => {
         setUsers(users.filter((el) => el._id !== id));
       }
     } catch (err) {
-      console.log(err.repsonse);
+      console.log(err);
     }
   };
 
