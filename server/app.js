@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT;
 
 // Set up a whitelist and check against it:
-export const isDomainAllowed = (origin, domains) => {
+const isDomainAllowed = (origin, domains) => {
   let isAllowed = false;
   domains.forEach(domain => {
     if (origin?.includes(domain)) {
