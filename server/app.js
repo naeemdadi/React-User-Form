@@ -10,10 +10,19 @@ const app = express();
 const port = process.env.PORT;
 
 // Set up a whitelist and check against it:
-var allowlist = ["https://react-user-form.netlify.app/"];
+export const isDomainAllowed = (origin, domains) => {
+  let isAllowed = false;
+  domains.forEach(domain => {
+    if (origin?.includes(domain)) {
+      isAllowed = true;
+    }
+  });
+  return isAllowed;
+};
 var corsOptionsDelegate = function (req, callback) {
+  const allowlist = ["react-user-form.netlify.app"];
   var corsOptions;
-  if (allowlist.indexOf(req.header("Origin")) !== -1) {
+  if (isDomainAllowed(req?.header('Origin'), allowlist) {
     corsOptions = { origin: true, credentials: true }; // reflect (enable) the requested origin in the CORS response
   } else {
     corsOptions = { origin: false }; // disable CORS for this request
